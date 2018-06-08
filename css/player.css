@@ -1,0 +1,163 @@
+/************************** Template **************************/
+
+body {
+	background-color: #990000;
+	overflow-x: hidden;
+	font-family: 'Open Sans', sans-serif;
+	margin: 50px auto;
+	width: 100%;
+	height: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        background-color: white;
+    }
+}
+
+#player-box {
+	margin: 0px auto;
+	font-size: 18px;
+	padding: 15px auto;
+	background-color: white;
+	color: black;
+	max-width: 900px;
+}
+
+#player-box .capa-album {
+	width: 200px;
+	margin: 30px auto;
+}
+
+#creditos {
+	margin: 20px;
+	text-align: center;
+}
+
+#creditos .musica {
+	padding: 50px auto;
+	margin: 20px;
+	text-align: center;
+}
+
+/************************** Fontes **************************/
+
+h1.titulo-video {
+	margin: 60px auto;
+	padding: 50px auto;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 32px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Crushed', sans-serif;
+	text-align: center;
+	font-weight: bold;
+	line-height: 1.5em;
+	color: #990000;
+}
+
+span .autor {
+	font-size: 20px;
+}
+
+
+p {
+	font-family: 'Open Sans', sans-serif;
+}
+
+#player-box span.campo {
+	font-weight: bold;
+	line-height: 2em;
+	color: #990000;
+}
+
+#player-box #creditos .autor {
+	font-weight: 500;
+}
+
+#player-box #creditos .descricao {
+	padding: 30px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 15px;
+}
+
+/************************** Multimídia **************************/
+
+#miraira_player {
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+	vertical-align: middle;
+}
+
+
+#player-box #player audio {
+	margin: 5px auto;
+    width: 100%;
+	border: 1px whitesmoke solid;
+	position: relative;
+}
+
+#player-box #player video {
+	margin: 5px auto;
+    width: 100%;
+	position: relative;
+}
+
+#player-box #player -webkit-video {
+	margin: 5px auto;
+    width: 100%;
+	position: relative;
+	background-color: black;
+	padding: 5px;
+}
+
+#player-box #player -ms-video {
+	margin: 5px auto;
+    width: 100%;
+	position: relative;
+	background-color: black;
+	padding: 5px;
+}
+
+#player-box #player -webkit-audio {
+	margin: 5px auto;
+    width: 100%;
+	border: 1px whitesmoke solid;
+	position: relative;
+}
+
+#player-box #player -moz-audio {
+	margin: 5px auto;
+    width: 100%;
+	border: 1px whitesmoke solid;
+	position: relative;
+}
+
+// Remove botão de download de músicas
+audio::-internal-media-controls-download-button {
+    display:none;
+}
+
+audio::-webkit-media-controls-enclosure {
+    overflow:hidden;
+}
+
+audio::-webkit-media-controls-panel {
+    width: calc(100% + 30px); 
+}
+
+// Remove botão de download de vídeos
+video::-internal-media-controls-download-button {
+    display:none;
+}
+
+video::-webkit-media-controls-enclosure {
+    overflow:hidden;
+}
+
+video::-webkit-media-controls-panel {
+    width: calc(100% + 30px);
+}
