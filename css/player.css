@@ -10,9 +10,35 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
-    body {
-        background-color: white;
-    }
+    #player-box {
+		background-color: #990000 !important;
+		color: white !important;
+	}
+
+	#player-box #creditos {
+		background-color: white;
+		color: black;
+		padding-top: 20px;
+		margin: 20px 0;
+	}
+
+	.musica {
+		background-color: white;
+		color: black;
+		padding-top: 80px !important;
+		padding-bottom: 20px !important;
+		margin: 20px auto;
+	}
+
+	.capa-album { 
+		width: 100px;
+		height: 100px;
+	 }
+
+	#player-box #player audio {
+		border: none !important;
+	}
+
 }
 
 #player-box {
@@ -28,6 +54,7 @@ body {
 	width: 200px;
 	margin: 30px auto;
 }
+
 
 #creditos {
 	margin: 20px;
@@ -47,6 +74,14 @@ h1.titulo-video {
 	padding: 50px auto;
 	font-family: 'Ubuntu', sans-serif;
 	font-size: 32px;
+}
+
+@media only screen and (max-width: 600px) {
+
+	h1.titulo-video {
+		color: white;
+	}
+
 }
 
 h1, h2, h3, h4, h5, h6 {

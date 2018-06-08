@@ -10,7 +10,7 @@
 
   /* Créditos da Música */
   $titulo = "Título do Vídeo";
-  $autor = "";
+  $autor = "oi";
   $descricao = "Blalalala";
 
   /* Links */
@@ -28,8 +28,6 @@
 
 	tocar_video($video_url);
 	
-		
-
 	/* Demais Informações do Vídeo */
 	exibir_creditosVideo($autor,$descricao);
 	
