@@ -69,10 +69,28 @@
 
 	function tocar_video($url) {
 
-		$player = '<div id="player" class="col-md-12">';
-		$player .= '<video width="auto" height="auto" oncontextmenu="return false;" controls>';
-		$player .= '<source src="' . $url . '" type="video/webm">';
-		$player .= '</video></div>';
+		if (strpos($url, 'youtube') !== false) {
+			$player = '<div id="player" class="col-md-12">';
+			$player .= '<iframe width="420" height="315" ';
+			$player .= 'src="' . $url . '?rel=0&showinfo=0" frameborder="0" allowfullscreen>';
+			$player .= '</iframe></div>';
+		}
+
+		elseif (strpos($url, 'vimeo') !== false) {
+			$player = '<div id="player" class="col-md-12">';
+			$player .= '<iframe width="420" height="315" ';
+			$player .= 'src="' . $url . '?rel=0&showinfo=0" frameborder="0" allowfullscreen>';
+			$player .= '</iframe></div>';
+		}
+
+		else {
+			$player = '<div id="player" class="col-md-12">';
+			$player .= '<video width="auto" height="auto" oncontextmenu="return false;" controls>';
+			$player .= '<source src="' . $url . '">';
+			$player .= '</video></div>';
+		}
+
+		
 		
 		echo $player;
 	}

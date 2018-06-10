@@ -141,6 +141,22 @@ p {
 	position: relative;
 }
 
+#player {
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 30px; height: 0; overflow: hidden;
+	}
+	
+	#player iframe,
+	#player object,
+	#player embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	}
+
 #player-box #player -webkit-video {
 	margin: 5px auto;
     width: 100%;
@@ -171,7 +187,7 @@ p {
 	position: relative;
 }
 
-// Remove botão de download de músicas
+/* Remove botão de download de músicas */
 audio::-internal-media-controls-download-button {
     display:none;
 }
@@ -184,7 +200,7 @@ audio::-webkit-media-controls-panel {
     width: calc(100% + 30px); 
 }
 
-// Remove botão de download de vídeos
+/* Remove botão de download de vídeos */
 video::-internal-media-controls-download-button {
     display:none;
 }
