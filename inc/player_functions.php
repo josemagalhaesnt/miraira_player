@@ -43,7 +43,7 @@
 
 	function tocar_musica($url) {
 		$player = '<div class="container">';
-		$player .= '<div id="player">';
+		$player .= '<div id="player" style="padding-bottom: 0px;">';
 
 		if ($url != "") {
 			$player .= '<audio src="' . $url . '" preload="none" oncontextmenu="return false;" controls> Seu navegador não suporta a execução desse áudio. </audio>';
@@ -84,7 +84,7 @@
 		}
 
 		else {
-			$player = '<div id="player" class="col-md-12">';
+			$player = '<div id="player" style="padding-bottom: 0px;" class="col-md-12">';
 			$player .= '<video width="auto" height="auto" oncontextmenu="return false;" controls>';
 			$player .= '<source src="' . $url . '">';
 			$player .= '</video></div>';
