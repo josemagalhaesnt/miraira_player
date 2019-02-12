@@ -42,9 +42,9 @@ body {
 }
 
 #player-box {
-	margin: 0px auto;
+	margin: 5px auto 20px;
 	font-size: 18px;
-	padding: 15px auto;
+	padding: 15px 0;
 	background-color: white;
 	color: black;
 	max-width: 900px;
@@ -196,6 +196,10 @@ p {
     width: 100%;
 	border: 1px whitesmoke solid;
 	position: relative;
+}
+
+#down-bt {
+	margin: 5px auto 20px !important;
 }
 
 /* Remove botão de download de músicas */

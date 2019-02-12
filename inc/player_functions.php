@@ -55,6 +55,18 @@
 		
 	}
 
+	function baixar_musica($download, $url) {
+		if ($download == "sim"){
+			$bt_download = '<section id="down-bt">';
+			$bt_download .= '<div class="container col-md-12">';
+			$bt_download .= '<div class="row">';
+			$bt_download .= '<a class="btn btn-outline-dark mx-auto" href="'. $url .'"' . 'download="CD_'. $url .'" role="button">';
+			$bt_download .= '<i class="fas fa-cloud-download-alt"></i> Fazer download</a></div></div></section>';
+		}
+
+		echo $bt_download;
+	}
+
 	function exibir_tituloVideo($titulo) {
 
 		$html = "";
