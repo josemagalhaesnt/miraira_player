@@ -150,16 +150,16 @@ p {
 	position: relative;
 }
 
-#player {
+#web-player {
 	position: relative;
 	padding-bottom: 56.25%;
 	padding-top: 30px; 
 	overflow: hidden;
 	}
 
-	#player iframe,
-	#player object,
-	#player embed {
+	#web-player iframe,
+	#web-player object,
+	#web-player embed {
 
 	position: absolute;
 	top: 0;

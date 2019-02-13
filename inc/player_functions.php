@@ -46,7 +46,7 @@
 		$player .= '<div id="player" style="padding-bottom: 0px;">';
 
 		if ($url != "") {
-			$player .= '<audio src="' . $url . '" preload="none" oncontextmenu="return false;" controls> Seu navegador não suporta a execução desse áudio. </audio>';
+			$player .= '<audio src="' . $url . '" preload="none" oncontextmenu="return false;" controls controlsList="nodownload"> Seu navegador não suporta a execução desse áudio. </audio>';
 		}
 		
 		$player .= '</div></div>';
@@ -82,14 +82,14 @@
 	function tocar_video($url) {
 
 		if (strpos($url, 'youtube') !== false) {
-			$player = '<div id="player" class="col-md-12">';
+			$player = '<div id="web-player" class="col-md-12">';
 			$player .= '<iframe width="420" height="315" ';
 			$player .= 'src="' . $url . '?rel=0&showinfo=0" frameborder="0" allowfullscreen>';
 			$player .= '</iframe></div>';
 		}
 
 		elseif (strpos($url, 'vimeo') !== false) {
-			$player = '<div id="player" class="col-md-12">';
+			$player = '<div id="web-player" class="col-md-12">';
 			$player .= '<iframe width="420" height="315" ';
 			$player .= 'src="' . $url . '?rel=0&showinfo=0" frameborder="0" allowfullscreen>';
 			$player .= '</iframe></div>';
@@ -97,7 +97,7 @@
 
 		else {
 			$player = '<div id="player" style="padding-bottom: 0px;" class="col-md-12">';
-			$player .= '<video width="auto" height="auto" oncontextmenu="return false;" controls>';
+			$player .= '<video width="auto" height="auto" oncontextmenu="return false;" controls controlsList="nodownload">';
 			$player .= '<source src="' . $url . '">';
 			$player .= '</video></div>';
 		}

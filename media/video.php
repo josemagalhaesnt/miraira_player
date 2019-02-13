@@ -1,35 +1,35 @@
-<?php 
-  /* Configurações do Player - NÃO APAGUE AS LINHAS ABAIXO PARA EVITAR PROBLEMAS */
-  require_once($_SERVER['DOCUMENT_ROOT'].'/miraira_player/config.php'); 
-  require_once($_SERVER['DOCUMENT_ROOT']. PLAYER_HEADER); 
-  require_once($_SERVER['DOCUMENT_ROOT']. PLAYER_FUNCTIONS);
+<?php
 
-  /* ALTERE AQUI - Colocar as informações da música dentro das aspas */
+  /* Metadados do arquivo de mídia - Instruções de Uso */
 
-  /* Caso a informação seja vazia ou desconhecida, deixar aspas em branco */
+  /* 1) Colocar as informações da música dentro das aspas */
 
-  /* Créditos da Música */
+  /* 2) Caso a informação seja vazia ou desconhecida, deixar aspas em branco */
+
+  /* 3) Caso a mídia esteja disponível para download, colocar o valor sim dentro das aspas na variável $download. Caso contrário deixar aspas em branco */
+
+  /* 4) Criar uma pasta videos (sem acento) e colocar os vídeos dentro, para melhor organização */
+
+
+  /* Créditos do Vídeo */
   $titulo = "Título do Vídeo";
-  $autor = "oi";
-  $descricao = "Blalalala";
+  $autor = "Autor";
+  $descricao = "Insira uma descrição";
+  $download = "";
 
   /* Links */
   $video_url = "videos/video.webm";
 
-  /* NÃO ALTERE AS LINHAS ABAIXO */
 
-  /* Funções do Player */
 
-	/* Informações do Vídeo */
+  /*
+  ******************************************************************************
+  NÃO ALTERAR AS LINHAS ABAIXO PARA NÃO COMPROMETER O FUNCIONAMENTO DA APLICAÇÃO 
+  ******************************************************************************
+  */
 
-	exibir_tituloVideo($titulo);
 
-	/* Player de vídeo */
+  require_once($_SERVER['DOCUMENT_ROOT']. '/miraira_player/config.php');
+  require_once($_SERVER['DOCUMENT_ROOT']. VIDEO_PLAYER); 
 
-	tocar_video($video_url);
-	
-	/* Demais Informações do Vídeo */
-	exibir_creditosVideo($autor,$descricao);
-	
-require_once($_SERVER['DOCUMENT_ROOT']. PLAYER_FOOTER); 
 ?>

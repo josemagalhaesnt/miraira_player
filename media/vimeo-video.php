@@ -1,14 +1,13 @@
 <?php 
-  /* Configurações do Player - NÃO APAGUE AS LINHAS ABAIXO PARA EVITAR PROBLEMAS */
-  require_once($_SERVER['DOCUMENT_ROOT'].'/miraira_player/config.php'); 
-  require_once($_SERVER['DOCUMENT_ROOT']. PLAYER_HEADER); 
-  require_once($_SERVER['DOCUMENT_ROOT']. PLAYER_FUNCTIONS);
 
-  /* ALTERE AQUI - Colocar as informações da música dentro das aspas */
+  /* Metadados do arquivo de mídia - Instruções de Uso */
 
-  /* Caso a informação seja vazia ou desconhecida, deixar aspas em branco */
+  /* 1) Colocar as informações da música dentro das aspas */
 
-  /* Créditos da Música */
+  /* 2) Caso a informação seja vazia ou desconhecida, deixar aspas em branco */
+
+  
+  /* Créditos do Vídeo */
   $titulo = "Índios no Brasil - Quem são eles?";
   $autor = 'Vídeo nas Aldeias: <a href="http://www.videonasaldeias.org.br">www.videonasaldeias.org.br</a>';
   $descricao = "A série de dez programas educativos “Índios no Brasil”, produzida para renovar o currículo escolar, é apresentada pelo líder indígena Ailton Krenak e mostra, sem intermediários, como vivem e o que pensam os índios de nove povos dispersos pelo território nacional.
@@ -18,20 +17,14 @@
   /* Links */
   $video_url = "https://player.vimeo.com/video/15635463";
 
-  /* NÃO ALTERE AS LINHAS ABAIXO */
+  /*
+  ******************************************************************************
+  NÃO ALTERAR AS LINHAS ABAIXO PARA NÃO COMPROMETER O FUNCIONAMENTO DA APLICAÇÃO 
+  ******************************************************************************
+  */
 
-  /* Funções do Player */
 
-	/* Informações do Vídeo */
+  require_once($_SERVER['DOCUMENT_ROOT']. '/miraira_player/config.php');
+  require_once($_SERVER['DOCUMENT_ROOT']. VIDEO_PLAYER); 
 
-	exibir_tituloVideo($titulo);
-
-	/* Player de vídeo */
-
-	tocar_video($video_url);
-	
-	/* Demais Informações do Vídeo */
-	exibir_creditosVideo($autor,$descricao);
-	
-require_once($_SERVER['DOCUMENT_ROOT']. PLAYER_FOOTER); 
 ?>

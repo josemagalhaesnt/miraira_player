@@ -1,41 +1,33 @@
 <?php 
-  /* Configurações do Player - NÃO APAGUE AS LINHAS ABAIXO PARA EVITAR PROBLEMAS */
-  require_once($_SERVER['DOCUMENT_ROOT']. '/miraira_player/config.php');
-  require_once($_SERVER['DOCUMENT_ROOT']. PLAYER_HEADER); 
-  require_once($_SERVER['DOCUMENT_ROOT']. PLAYER_FUNCTIONS);
+  
+  /* Metadados do arquivo de mídia - Instruções de Uso */
 
-  /* ALTERE AQUI - Colocar as informações da música dentro das aspas */
+  /* 1) Colocar as informações da música dentro das aspas */
 
-  /* Caso a informação seja vazia ou desconhecida, deixar aspas em branco */
+  /* 2) Caso a informação seja vazia ou desconhecida, deixar aspas em branco */
+
+  /* 3) Caso a mídia esteja disponível para download, colocar o valor sim dentro das aspas na variável $download. Caso contrário deixar aspas em branco */
+
+  /* 4) Criar uma pasta audios (sem acento) e colocar os áudios dentro, para melhor organização */
+
 
   /* Créditos da Música */
-  $titulo = "Nossa Senhora do Rosário Bendito";
-  $autor = "Calé Alencar";
-  $interprete = "Loas Maracatu Nação Fortaleza";
-  $album = "Salve Mãe Pequena Jenipapo-Kanindé";
+  $titulo = "Título";
+  $autor = "Autor";
+  $interprete = "Intérprete";
+  $album = "Álbum";
+  $download = "sim";
 
   /* Links */
   $capa_url = "";
-  $musica_url = "audios/14.mp3";
-  $download = "sim";
+  $musica_url = "audios/audio.mp3";
 
-  /* NÃO ALTERE AS LINHAS ABAIXO */
+  /*
+  ******************************************************************************
+  NÃO ALTERAR AS LINHAS ABAIXO PARA NÃO COMPROMETER O FUNCIONAMENTO DA APLICAÇÃO 
+  ******************************************************************************
+  */
 
-  /* Funções do Player */
-
-	/* Informações da Música */
-
-		exibir_capaAlbum($capa_url);
-
-		exibir_creditosMusica($titulo,$autor,$interprete,$album);
-
-	/* Player de áudio */
-
-		tocar_musica($musica_url);
-
-	/* Download */
-		baixar_musica($download, $musica_url);
-
-  /* Configurações do Player - NÃO APAGUE AS LINHAS ABAIXO PARA EVITAR PROBLEMAS */
-  require_once($_SERVER['DOCUMENT_ROOT']. PLAYER_FOOTER); 
+  require_once($_SERVER['DOCUMENT_ROOT']. '/miraira_player/config.php');
+  require_once($_SERVER['DOCUMENT_ROOT']. MUSIC_PLAYER); 
 ?>
