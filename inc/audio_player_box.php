@@ -14,8 +14,8 @@
 
 	tocar_musica($musica_url);
 
-	/* Download */
-	baixar_musica($download, $musica_url);
+	/* Baixar música */
+	baixar_musica($album, $musica_url);
 
   /* Configurações do Player - NÃO APAGUE AS LINHAS ABAIXO PARA EVITAR PROBLEMAS */
   require_once($_SERVER['DOCUMENT_ROOT']. PLAYER_FOOTER); 

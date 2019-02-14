@@ -1,7 +1,7 @@
 <?php
 
 	function exibir_creditosMusica ($titulo, $autor, $interprete, $album) {
-		$html = '<div id="creditos" class="musica">';
+		$html = '<div id="player-box" class="col-md-12"><div id="creditos" class="musica">';
 
 		if ($titulo != "") {
 			$html .= '<span class="campo text text-center">Título: </span>';
@@ -43,10 +43,13 @@
 
 	function tocar_musica($url) {
 		$player = '<div class="container">';
-		$player .= '<div id="player" style="padding-bottom: 0px;">';
+		$player .= '<div id="media-player" style="padding-bottom: 0px;">';
 
 		if ($url != "") {
-			$player .= '<audio src="' . $url . '" preload="none" oncontextmenu="return false;" controls controlsList="nodownload"> Seu navegador não suporta a execução desse áudio. </audio>';
+			$player .= '<div class="player">';
+			$player .= '<audio id="music_player" preload="none" oncontextmenu="return false;" controls controlsList="nodownload"><source src="' . $url .'"/></audio></div>';
+			
+			/*$player .= '<audio class="media-audio" src="' . $url . '" preload="none" oncontextmenu="return false;" controls controlsList="nodownload"> Seu navegador não suporta a execução desse áudio. </audio>';*/
 		}
 		
 		$player .= '</div></div>';
@@ -55,25 +58,36 @@
 		
 	}
 
-	function baixar_musica($download, $url) {
-		if ($download == "sim"){
-			$bt_download = '<section id="down-bt">';
-			$bt_download .= '<div class="container col-md-12">';
-			$bt_download .= '<div class="row">';
-			$bt_download .= '<a class="btn btn-outline-dark mx-auto" href="'. $url .'"' . 'download="CD_'. $url .'" role="button">';
-			$bt_download .= '<i class="fas fa-cloud-download-alt"></i> Fazer download</a></div></div></section>';
+	function auth_download ($album){
+		require_once($_SERVER['DOCUMENT_ROOT']. DOWNLOAD_AUTH); 
+		if(in_array ($album, $download_auth)== true){
+			return true;
 		}
+	}
 
-		echo $bt_download;
+	function baixar_musica($album, $url) {
+
+		$bt_download = '<div class="legenda text-center"><i class="fas fa-volume-up"></i> 
+		Mídia disponível apenas para reproduzir online</div>';
+		
+		if (auth_download($album) == true) {
+				$bt_download = '<section id="down-bt">';
+				$bt_download .= '<div class="container col-md-12">';
+				$bt_download .= '<div class="row">';
+				$bt_download .= '<a class="btn btn-outline-dark mx-auto" href="'. $url .'"' . 'download="CD_'. $url .'" role="button">';
+				$bt_download .= '<i class="fas fa-cloud-download-alt"></i> Fazer download</a></div></div></section>';
+			}
+
+			echo $bt_download;
 	}
 
 	function exibir_tituloVideo($titulo) {
 
-		$html = "";
+		$html = '<div id="player-box" class="video col-md-12">';
 
 		if ($titulo != "") {
 
-			$html = '<h1 class="text text-center titulo-video">'. $titulo .'</h1>';
+			$html .= '<h1 class="text text-center titulo-video">'. $titulo .'</h1>';
 		}
 		
 		echo $html;
@@ -82,6 +96,8 @@
 	function tocar_video($url) {
 
 		if (strpos($url, 'youtube') !== false) {
+
+    		$url = str_replace("watch?v=", "embed/", $url);
 			$player = '<div id="web-player" class="col-md-12">';
 			$player .= '<iframe width="420" height="315" ';
 			$player .= 'src="' . $url . '?rel=0&showinfo=0" frameborder="0" allowfullscreen>';
@@ -96,10 +112,11 @@
 		}
 
 		else {
-			$player = '<div id="player" style="padding-bottom: 0px;" class="col-md-12">';
-			$player .= '<video width="auto" height="auto" oncontextmenu="return false;" controls controlsList="nodownload">';
+			$player = '<div id="media-player" style="padding-bottom: 0px;" class="col-md-12">';
+			$player .= '<video class="media-video" width="auto" height="auto" oncontextmenu="return false;" controls controlsList="nodownload">';
 			$player .= '<source src="' . $url . '">';
-			$player .= '</video></div>';
+			$player .= '</video><div class="legenda text-center"><i class="fas fa-volume-up"></i> 
+		Mídia disponível apenas para reproduzir online</div></div>';
 		}
 
 		
