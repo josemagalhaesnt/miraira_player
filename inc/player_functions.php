@@ -59,28 +59,31 @@
 	}
 
 	function album_auth_download ($album){
-		require_once($_SERVER['DOCUMENT_ROOT']. DOWNLOAD_AUTH); 
-		if(is_array($album_download_lista) AND in_array ($album, $album_download_lista)){
+		require($_SERVER['DOCUMENT_ROOT']. DOWNLOAD_AUTH);
+		
+		if(in_array ($album, $album_download_lista)){
 			return true;
 		}
 	}
 
 	function artista_auth_download ($interprete){
-		require_once($_SERVER['DOCUMENT_ROOT']. DOWNLOAD_AUTH); 
-		if(is_array($artista_download_lista) AND in_array ($interprete, $artista_download_lista)){
+		require($_SERVER['DOCUMENT_ROOT']. DOWNLOAD_AUTH);
+ 
+		if(in_array ($interprete, $artista_download_lista)){
 			return true;
 		}
 	}
 
 	function faixa_auth_download ($titulo){
-		require_once($_SERVER['DOCUMENT_ROOT']. DOWNLOAD_AUTH); 
-		if(is_array($faixa_download_lista) AND in_array ($titulo, $faixa_download_lista)){
+		require($_SERVER['DOCUMENT_ROOT']. DOWNLOAD_AUTH);
+		
+		if(in_array ($titulo, $faixa_download_lista)){
 			return true;
 		}
 	}
 
 	function alb_baixar_musica($album, $url) {
-
+		$bt_download = "";
 		
 		if (album_auth_download($album) == true) {
 				$bt_download = '<section id="down-bt">';
@@ -89,36 +92,50 @@
 				$bt_download .= '<a class="btn btn-outline-dark mx-auto" href="'. $url .'"' . 'download="CD_'. $url .'" role="button">';
 				$bt_download .= '<i class="fas fa-cloud-download-alt"></i> Fazer download</a></div></div></section>';
 			}
+		else 
+			$bt_download = '<div class="legenda text-center"><i class="fas fa-volume-up"></i> 
+		Mídia disponível apenas para reproduzir online</div>';
+		
 
-			echo $bt_download;
+		echo $bt_download;
 	}
 
 	function art_baixar_musica($interprete, $url) {
 
-		
+		$bt_download = "";
+
 		if (artista_auth_download($interprete) == true) {
-				$bt_download = '<section id="down-bt">';
+				$bt_download .= '<section id="down-bt">';
 				$bt_download .= '<div class="container col-md-12">';
 				$bt_download .= '<div class="row">';
 				$bt_download .= '<a class="btn btn-outline-dark mx-auto" href="'. $url .'"' . 'download="CD_'. $url .'" role="button">';
 				$bt_download .= '<i class="fas fa-cloud-download-alt"></i> Fazer download</a></div></div></section>';
 			}
+		else 
+			$bt_download = '<div class="legenda text-center"><i class="fas fa-volume-up"></i> 
+		Mídia disponível apenas para reproduzir online</div>';
+		
 
-			echo $bt_download;
+		echo $bt_download;
 	}
 
 	function fai_baixar_musica($titulo, $url) {
 
+		$bt_download = "";
 		
 		if (faixa_auth_download($titulo) == true) {
-				$bt_download = '<section id="down-bt">';
+				$bt_download .= '<section id="down-bt">';
 				$bt_download .= '<div class="container col-md-12">';
 				$bt_download .= '<div class="row">';
 				$bt_download .= '<a class="btn btn-outline-dark mx-auto" href="'. $url .'"' . 'download="CD_'. $url .'" role="button">';
 				$bt_download .= '<i class="fas fa-cloud-download-alt"></i> Fazer download</a></div></div></section>';
 			}
+		else 
+			$bt_download = '<div class="legenda text-center"><i class="fas fa-volume-up"></i> 
+		Mídia disponível apenas para reproduzir online</div>';
+		
 
-			echo $bt_download;
+		echo $bt_download;
 	}
 
 	function exibir_tituloVideo($titulo) {
