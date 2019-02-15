@@ -91,11 +91,7 @@
 				$bt_download .= '<div class="row">';
 				$bt_download .= '<a class="btn btn-outline-dark mx-auto" href="'. $url .'"' . 'download="CD_'. $url .'" role="button">';
 				$bt_download .= '<i class="fas fa-cloud-download-alt"></i> Fazer download</a></div></div></section>';
-			}
-		else 
-			$bt_download = '<div class="legenda text-center"><i class="fas fa-volume-up"></i> 
-		Mídia disponível apenas para reproduzir online</div>';
-		
+		}
 
 		echo $bt_download;
 	}
@@ -110,11 +106,7 @@
 				$bt_download .= '<div class="row">';
 				$bt_download .= '<a class="btn btn-outline-dark mx-auto" href="'. $url .'"' . 'download="CD_'. $url .'" role="button">';
 				$bt_download .= '<i class="fas fa-cloud-download-alt"></i> Fazer download</a></div></div></section>';
-			}
-		else 
-			$bt_download = '<div class="legenda text-center"><i class="fas fa-volume-up"></i> 
-		Mídia disponível apenas para reproduzir online</div>';
-		
+		}
 
 		echo $bt_download;
 	}
@@ -129,11 +121,7 @@
 				$bt_download .= '<div class="row">';
 				$bt_download .= '<a class="btn btn-outline-dark mx-auto" href="'. $url .'"' . 'download="CD_'. $url .'" role="button">';
 				$bt_download .= '<i class="fas fa-cloud-download-alt"></i> Fazer download</a></div></div></section>';
-			}
-		else 
-			$bt_download = '<div class="legenda text-center"><i class="fas fa-volume-up"></i> 
-		Mídia disponível apenas para reproduzir online</div>';
-		
+		}
 
 		echo $bt_download;
 	}

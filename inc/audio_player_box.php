@@ -25,6 +25,11 @@
 		fai_baixar_musica($titulo, $musica_url);
 	}
 
+	else {
+		echo '<div class="legenda text-center"><i class="fas fa-volume-up"></i> 
+		Mídia disponível apenas para reproduzir online</div>';
+	}
+
 	
 
   /* Configurações do Player - NÃO APAGUE AS LINHAS ABAIXO PARA EVITAR PROBLEMAS */
