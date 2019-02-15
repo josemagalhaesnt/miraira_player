@@ -12,5 +12,4 @@
 <body oncontextmenu="return false;">
 	<section id="miraira_player">
 		<div class="container">
-			<div class="row">
-				
+			<div class="row">		
