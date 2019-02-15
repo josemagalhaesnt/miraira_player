@@ -1,7 +1,7 @@
 <?php
 
 	function exibir_creditosMusica ($titulo, $autor, $interprete, $album) {
-		$html = '<div id="player-box" class="col-md-12"><div id="creditos" class="musica">';
+		$html = '<div id="player-box" class="col-lg-9 col-12"><div id="creditos" class="musica">';
 
 		if ($titulo != "") {
 			$html .= '<span class="campo text text-center">Título: </span>';
@@ -32,7 +32,7 @@
 	function exibir_capaAlbum ($capa_url) {
 
 		if ($capa_url != "") {
-			$capa = '<div class="mx-auto capa-album">';
+			$capa = '<div class="mx-auto capa-album col-lg-3 col-12">';
 			$capa .= '<img class="img-fluid img-thumbnail" src="' . $capa_url . '" width="200" height="200"/>';
 			$capa .= '</div>';
 
