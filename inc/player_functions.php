@@ -146,14 +146,16 @@
 			$player = '<div id="web-player" class="col-md-12">';
 			$player .= '<iframe width="420" height="315" ';
 			$player .= 'src="' . $url . '?rel=0&showinfo=0" frameborder="0" allowfullscreen>';
-			$player .= '</iframe></div>';
+			$player .= '</iframe></div><br><div class="legenda text-center"><i class="fas fa-volume-up"></i> 
+		Mídia disponível apenas para reproduzir online</div>';
 		}
 
 		elseif (strpos($url, 'vimeo') !== false) {
 			$player = '<div id="web-player" class="col-md-12">';
 			$player .= '<iframe width="420" height="315" ';
 			$player .= 'src="' . $url . '?rel=0&showinfo=0" frameborder="0" allowfullscreen>';
-			$player .= '</iframe></div>';
+			$player .= '</iframe></div><br><div class="legenda text-center"><i class="fas fa-volume-up"></i> 
+		Mídia disponível apenas para reproduzir online</div>';
 		}
 
 		else {
